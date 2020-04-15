@@ -1,13 +1,14 @@
-# 📦 Webpack Boilerplate
+# 📦 Lit-html Boilerplate
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT) ![David](https://img.shields.io/david/dev/taniarascia/webpack-boilerplate)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
-Minimal Webpack 4 boilerplate with Babel, Sass, ESLint, Hot Module Replacement, and development/production optimization.
+
+Minimal Webpack 4 boilerplate with lit-html, Babel, Sass, ESLint, Hot Module Replacement, and development/production optimization.
 
 ## Installation
 
 ```
-git clone git@github.com:taniarascia/webpack-boilerplate
+git clone git@github.com:JaroslawMejer/lit-html-boilerplate.git
 npm i
 ```
 
@@ -19,7 +20,7 @@ npm i
 npm start
 ```
 
-You can view the development server at `localhost:3000`.
+You can check the development server at `localhost:3000`.
 
 ### Production build
 
@@ -27,7 +28,7 @@ You can view the development server at `localhost:3000`.
 npm run build
 ```
 
-You can view the deploy by creating a server in `dist`.
+You can check the deploy by creating a server in `dist`.
 
 ```bash
 cd dist && http-server
@@ -40,6 +41,8 @@ cd dist && http-server
 - [Sass](https://sass-lang.com/)
 - [PostCSS](https://postcss.org/)
 - [ESLint](https://eslint.org/)
+- [lit-html](https://lit-html.polymer-project.org/)
+- [Prettier](https://prettier.io/)
 
 ## Dependencies
 
@@ -51,6 +54,10 @@ cd dist && http-server
 - [`webpack-merge`](https://github.com/survivejs/webpack-merge) - Simplify development/production configuration
 - [`cross-env`](https://github.com/kentcdodds/cross-env) - Cross platform configuration.
 
+### Template Library
+
+- [`lit-html`](https://lit-html.polymer-project.org) - An efficient, expressive, extensible HTML templating library for JavaScript.
+
 ### Babel
 
 - [`@babel/core`](https://www.npmjs.com/package/@babel/core) - Transpile ES6+ to backwards compatible JavaScript.
@@ -58,6 +65,7 @@ cd dist && http-server
 - [`@babel/preset-env`](https://babeljs.io/docs/en/babel-preset-env) - Smart defaults for Babel.
 - [`babel-eslint`](https://github.com/babel/babel-eslint) - Lint Babel code.
   - [`eslint`](https://github.com/eslint/eslint) - ESLint.
+  - [`eslint-config-airbnb-base`](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb-base) - ESLint Airbnb`s base.
 
 ### Loaders
 
@@ -81,10 +89,14 @@ cd dist && http-server
 - [`mini-css-extract-plugin`](https://github.com/webpack-contrib/mini-css-extract-plugin) - Extract CSS into separate files.
 - [`optimize-css-assets-webpack-plugin`](https://github.com/NMFR/optimize-css-assets-webpack-plugin) - Optimize and minimize CSS assets.
 - [`terser-webpack-plugin`](https://github.com/webpack-contrib/terser-webpack-plugin) - Minify JavaScript.
+- [`eslint-plugin-import`](https://github.com/benmosher/eslint-plugin-import) - support linting of ES2015+ (ES6+) import/export syntax, and prevent issues with misspelling of file paths and import names.
 
 ## Author
+- Jaroslaw Mejer
 
-- [Tania Rascia](https://www.taniarascia.com)
+## Credit
+
+Based on [open source project](https://github.com/taniarascia/webpack-boilerplate) available under the [MIT License](LICENSE) created by [Tania Rascia](https://www.taniarascia.com)
 
 ## License
 
