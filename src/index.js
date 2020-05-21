@@ -1,5 +1,5 @@
 // Test import of a JavaScript function, an SVG, and Sass
-import LitTest from "./js/HelloWorld";
+import App from "./js/template";
 import "./styles/index.scss";
 
-LitTest();
+App();

@@ -1,9 +1,13 @@
+@import 'variables';
+@import "box";
+@import "header";
+
 @font-face {
   font-family: 'Roboto';
   src: url(../fonts/Roboto-Regular.ttf)
 }
 
-@import 'variables';
+
 
 html {
   font-size: $root-font-size;
@@ -15,4 +19,10 @@ html {
 
 p {
   font-size: $paragraph-font-size;
+}
+
+
+h1,h2,h3,h4,p{
+  margin: 0;
+  padding: 0;
 }

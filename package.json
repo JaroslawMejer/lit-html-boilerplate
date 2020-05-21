@@ -51,6 +51,7 @@
   "dependencies": {
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-import": "^2.20.2",
+    "lit-element": "^2.3.1",
     "lit-html": "^1.2.1"
   }
 }
