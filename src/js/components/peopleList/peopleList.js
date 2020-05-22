@@ -1,9 +1,11 @@
 import { html, nothing } from "lit-html";
 import { LitElement, css } from "lit-element";
-import people from "./list";
+import { connect } from "pwa-helpers";
+import { removePerson } from "../../redux/actions";
+import store from "../../redux/store";
 import "../counter/counter";
 
-class PeopleList extends LitElement {
+class PeopleList extends connect(store)(LitElement) {
   static get styles() {
     return css`
       .box {
@@ -32,40 +34,32 @@ class PeopleList extends LitElement {
     };
   }
 
-  constructor() {
-    super();
-    this.allPeople = people;
+  stateChanged(state) {
+    this.allPeople = state.peopleList;
   }
 
   handleClick(index) {
     console.log(index);
-    this.allPeople.splice(index, 1);
-    this.requestUpdate();
+
+    store.dispatch(removePerson(index));
   }
 
   render() {
-    return this.allPeople.map((person, index) => {
-      // const clickHandler = {
-      //   handleEvent(e) {
-      //     console.log(`Clicked: ${e}`);
-      //     console.log(`Index: ${index}`);
-      //     console.log(this.allPeople);
-      //     this.allPeople.splice(index, 1);
-      //     this.requestUpdate();
-      //   },
-      //   capture: true,
-      // };
+    return this.allPeople.map((person) => {
       return html`
-        <div
-          class=${person.cssClass}
-          @click=${() => {
-            this.handleClick(index);
-          }}
-        >
-          ${person.isAdmin ? html`<span class="test">ADMIN</span>` : nothing}
+        <div class=${person.cssClass}>
+          ${person.role === "Admin"
+            ? html`<span class="test">ADMIN</span>`
+            : nothing}
           <h2>Hello! My name is ${person.name}</h2>
           <p>I am ${person.age} and I work as a ${person.job}</p>
           <counter-component></counter-component>
+          <span
+            @click=${() => {
+              this.handleClick(person.personId);
+            }}
+            >X</span
+          >
         </div>
       `;
     });
